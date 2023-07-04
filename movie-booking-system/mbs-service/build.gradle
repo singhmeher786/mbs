@@ -1,0 +1,45 @@
+plugins {
+	id 'org.springframework.boot' version '2.2.5.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+}
+
+group = 'com.mycompany'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+
+repositories {
+	mavenCentral()
+}
+
+def swaggerVersion = '2.9.2'
+def jwtVersion = '0.9.1'
+def restAssuredVersion = '3.3.0'
+def testContainersSpringBoot = '1.43'
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation "io.springfox:springfox-swagger2:$swaggerVersion"
+	implementation "io.springfox:springfox-swagger-ui:$swaggerVersion"
+	implementation "io.jsonwebtoken:jjwt:$jwtVersion"
+    implementation 'org.projectlombok:lombok:1.18.26'
+	implementation 'org.projectlombok:lombok:1.18.26'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+	testImplementation 'org.springframework.security:spring-security-test'
+	testImplementation "io.rest-assured:rest-assured:$restAssuredVersion"
+	testImplementation "io.rest-assured:json-path:$restAssuredVersion"
+	testImplementation "io.rest-assured:xml-path:$restAssuredVersion"
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation "org.springframework.cloud:spring-cloud-starter:2.2.2.RELEASE"
+	testCompile "com.playtika.testcontainers:embedded-mongodb:$testContainersSpringBoot"
+}
+
+test {
+	useJUnitPlatform()
+}
