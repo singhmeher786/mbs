@@ -2,16 +2,12 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
-      <module name="customer-service" target="1.8" />
-      <module name="product-service" target="1.8" />
-      <module name="user-service" target="1.8" />
+      <module name="mbs-service" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="customer-service" options="-parameters" />
-      <module name="product-service" options="-parameters" />
-      <module name="user-service" options="-parameters" />
+      <module name="mbs-service" options="-parameters" />
     </option>
   </component>
 </project>
